@@ -1,6 +1,7 @@
 'use client'
 
 import { ChangeEvent, useState } from 'react'
+import Image from 'next/image'
 
 export function MediaPicker() {
   const [preview, setPreview] = useState<string | null>(null)
@@ -29,10 +30,11 @@ export function MediaPicker() {
       />
 
       {preview && (
-        // eslint-disable-next-line
-        <img
+        <Image
           src={preview}
-          alt=""
+          width={100}
+          height={100}
+          alt="Imagem selecionada"
           className="aspect-video w-full rounded-lg object-cover"
         />
       )}
